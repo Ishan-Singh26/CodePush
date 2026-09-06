@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long hgv;
+typedef long long hkjabgv;
 
 void solve() {
     int n;
