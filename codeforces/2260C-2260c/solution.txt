@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+typedef long long ll;
+ 
+void solve() {
+    ll x,y;
+    cin>>x>>y;
+ 
+    if(x==0 || y==0){
+        cout<<x+y<<" "<<0<<"\n";
+        return;
+    }
+ 
+    ll s = x+y;
+ 
+    ll rem = s;
+    ll r = 0;
+    while(rem>0){
+        ll k = log2(rem);
+        ll bit = 1LL<<k;
+        if(r+bit<=x) r += bit;
+        rem -= bit;
+    }
+    ll ans = x - r;
+ 
+    cout<<s<<" "<<ans<<"\n";
+}
+ 
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+ 
+    int qrTNum;
+    cin>>qrTNum;
+ 
+    while(qrTNum--){
+        solve();
+    }
+}
